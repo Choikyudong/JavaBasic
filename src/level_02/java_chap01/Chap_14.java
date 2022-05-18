@@ -9,7 +9,7 @@ import java.util.Properties;
 // HashMap의 구버전 HashTable을 상속받아 구현한 것으로
 // 기존에 맵들은 (Object, Object) 형식인데 해당 방식은 (String, String)으로 저장하는 방식이다.
 
-// 자바를 사용해봤다면 .properties라는 파일들을 봤을 것이다.
+// 스프링을 사용해봤다면 .properties라는 파일들을 봤을 것이다.
 // 해당 클래스는 그런 설정들을 하는데 주로 사용하고 있는 클래스이다.
 // 꼭 지금 당장 알아야하는 클래스는 아니지만 알아두면 도움이 될 클래스일 것이다.
 public class Chap_14 {
@@ -43,7 +43,7 @@ public class Chap_14 {
         /*propertyNames()*/
         // 목록의 모든 "키"값을 반환한다.
         // 반환타입 : Enumeration
-        Enumeration enumeration = properties.propertyNames();
+        Enumeration<?> enumeration = properties.propertyNames();
         System.out.println("\npropertyNames");
         while (enumeration.hasMoreElements()) {
             System.out.println(enumeration.nextElement());
@@ -54,7 +54,7 @@ public class Chap_14 {
         // 반환타입 : void
         /*두개의 클래스는 지금까지 계속 사용해오던 "out.println()" 처럼 입출력을 담당하는 클래스라고 생각하자*/
         System.out.println();
-        properties.list( System.out);
+        properties.list(System.out);
 
         /*load(InputStream), load(Reader)*/
         // 지정된 객체로 목록을 읽은 뒤 저장한다.
